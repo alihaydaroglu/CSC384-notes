@@ -1,7 +1,8 @@
-#Search
+#Uninformed Search
 I missed the first two lectures of this topic.
 
 Time-space complexity, completeness, and optimality are things that we need to consider when picking search parameters.
+
 ##Breadth-First Search
 Two parameters, $$b$$ and $$d$$. High time and space complexity, $$b^{d+1}$$.
 
@@ -57,3 +58,15 @@ This sounds like a dumb idea but it actually is not. If you can avoid going anot
 **Time complexity**: $$O(b^d)$$, check [slides page 78](http://www.teach.cs.toronto.edu/~csc384h/winter/Lectures/csc384w18-Lecture02-UninformedSearch.pdf) for breakdown.
 
 ##Path and Cycle Checking
+Paths are stored on the frontier, and path checking:
+* Ensures that the state c is not equal to the state reached by any ancestor of c along the path
+* Paths are checked in isolation
+
+Path checking does not check for this case (this is OK):
+![path_check](/assets/path_check.JPG)
+To get rid of this, we need to do **cycle checking**.
+
+Cycle checking is high space complexity, and it is only useful with breadth first search.
+
+In this picture, yellows are violating cycle checking, reds are violating path checking.
+![cycle_check](/assets/cycle_check.JPG)
