@@ -33,3 +33,20 @@ Where $$g(n)$$ is the cost of the path to node $$n$$, and $$h(n)$$ is the heuris
 ##Properties of Heuristic Functions
 ###Admissibility
 We always assume that an admissible heuristic underestimates the true cost to reach the goal, it is *optimistic*. So, if $$h^{*}(n)$$ is the cost of the optimal path to a node, then for any node $$h(n)\leq h^{*}(n)$$. We can't always guarantee admissibility. Sometimes we use two heuristics, one of which is admissible to use some sort of branch and bounds? Something along the lines of upper and lower bounding the solution.
+
+**Missed a lecture covering a part of this lecture (up to page 37)**.
+
+A heuristic needs to be **admissible** and **consistent** (latter implies the former) to be complete.
+
+There are space problems with A* search, so we use Iterative Deepening A* (IDA*) to address these issues.
+
+##Constructing Heuristics
+A better heuristic is a bigger number, closer to the perfect heuristic. They expand to fewer nodes, but does not necessarily mean it is faster because some heuristics take a lot longer.
+
+To relax problems, use some more abstraction - ignore some parts of the state.
+
+###Pattern databases
+Configurations are stored in a database?
+
+##Local Search
+We have done systematic search, but there is also stochastic or local search. The idea is to find the solution (a global max/min). We want to prevent getting stuck in the local extrema.
